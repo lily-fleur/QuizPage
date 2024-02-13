@@ -1,33 +1,40 @@
 'use strict';
 {
 
-    let scores = 0;
+  let scores = 0;
+  let result = [];
 
-    document.querySelector('button').addEventListener('click', () => {
-      document.querySelectorAll('input').forEach((radio) => {
-        if (radio.checked === true) {
-          if (radio.value === "correct") {
-            scores ++;
-          }
+  document.querySelector('button').addEventListener('click', () => {
+    document.querySelectorAll('input').forEach((radio, index) => {
+      if (radio.checked === true) {
+        if (radio.value === "correct") {
+          scores ++;
+        } else {
+          result.push(index /3 +1);
         }
-      });
+      }
+    });
 
 
       if(scores == 10) {
         if(!alert(`全問正解だよ！すごーい！歴史博士！`)){
             scores = 0;
+            result = [];
           }
       } else if (scores >= 8) {
-        if(!alert(`${scores}問正解だよ！あと少し！`)){
+        if(!alert(`${scores}問正解だよ！\n${result}番を間違えていたよ！\nあと少し！`)){
           scores = 0;
+          result = [];
         }
       } else if(scores >= 5) {
-        if(!alert(`${scores}問正解だよ！どこが間違えたか見返してみよう！`)){
+        if(!alert(`${scores}問正解だよ！\n${result}番を間違えていたよ！\n見返してみよう！`)){
           scores = 0;
+          result = [];
         }
       } else {
-        if(!alert(`${scores}問正解だよ！もう一度復習してみよう！`)){
+        if(!alert(`${scores}問正解だよ！\n${result}番を間違えていたよ！\nもう一度復習してみよう！`)){
           scores = 0;
+          result = [];
         }
       }
 
