@@ -33,12 +33,12 @@
             result = [];
           }
       } else if (scores >= 5) {
-        if(!alert(`${scores}問正解だよ！\n${result}番を間違えていたよ！\nあと少し！`)){
+        if(!alert(`${scores}問正解だよ！\n${result.join('、')}番を間違えていたよ！\nあと少し！`)){
           scores = 0;
           result = [];
         }
       } else {
-        if(!alert(`${scores}問正解だよ！\n${result}番を間違えていたよ！\nYouTube見るところから始めてみよう！`)){
+        if(!alert(`${scores}問正解だよ！\n${result.join('、')}番を間違えていたよ！\nYouTube見るところから始めてみよう！`)){
           scores = 0;
           result = [];
         }
