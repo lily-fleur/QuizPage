@@ -12,7 +12,7 @@
             // result.push(true);
           } else {
             // result.push(false);
-            result.push(index /3 +1);
+            result.push(Math.floor(index / 3) +1);
           }
         }
       });
